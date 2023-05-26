@@ -1,0 +1,19 @@
+import styled from "styled-components"
+
+const StyledFooter = styled.footer`
+    width: 100vw;
+    height: 80px;
+    line-height: 80px;
+    margin-top: 70px;
+    background-color: #1F1F1F;
+    position: relative;
+    text-align: center;
+    font-size: 32px;
+    color: #FFF;
+`;
+
+export const Footer = () => {
+    return (
+        <StyledFooter>Pixel Wave</StyledFooter>
+    );
+}

@@ -1,0 +1,65 @@
+[
+    {
+        "id": "1",
+        "image": "/images/dunks.jpg.webp",
+        "title": "Nike Dunk Low Retro White/Grey Fog",
+        "price":  450,
+        "inStock": true
+    },
+    {
+        "id": "2",
+        "image": "/images/dunks.jpg.webp",
+        "title": "Air Jordan 1 Retro High OG University Blue",
+        "price":  900,
+        "inStock": false
+    },
+    {
+        "id": "3",
+        "image": "/images/dunks.jpg.webp",
+        "title": "Jordan 11 Retro Space Jam",
+        "price":  350,
+        "inStock": true
+    },
+    {
+        "id": "4",
+        "image": "/images/dunks.jpg.webp",
+        "title": "Nike Dunk Low Retro White/Grey Fog",
+        "price":  450,
+        "inStock": true
+    },
+    {
+        "id": "5",
+        "image": "/images/dunks.jpg.webp",
+        "title": "Air Jordan 1 Retro High OG University Blue",
+        "price":  900,
+        "inStock": false
+    },
+    {
+        "id": "6",
+        "image": "/images/dunks.jpg.webp",
+        "title": "Jordan 11 Retro Space Jam",
+        "price":  350,
+        "inStock": true
+    },
+    {
+        "id": "7",
+        "image": "/images/dunks.jpg.webp",
+        "title": "Nike Dunk Low Retro White/Grey Fog",
+        "price":  450,
+        "inStock": true
+    },
+    {
+        "id": "8",
+        "image": "/images/dunks.jpg.webp",
+        "title": "Air Jordan 1 Retro High OG University Blue",
+        "price":  900,
+        "inStock": false
+    },
+    {
+        "id": "9",
+        "image": "/images/dunks.jpg.webp",
+        "title": "Jordan 11 Retro Space Jam",
+        "price":  350,
+        "inStock": true
+    }
+]
