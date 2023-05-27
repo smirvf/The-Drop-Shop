@@ -1,3 +1,9 @@
-# misc
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### misc ###
 .DS_Store
 the-drop-shop-service/secrets.txt
