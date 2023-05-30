@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { Divider, Footer, HeroSection, PageLink, ShoeCollection } from '@/components/componentsindex'
+import { Divider, HeroSection, PageLink, ShoeCollection } from '@/components/componentsindex'
 import shoes from '../shoecollection.json'
 import styled from 'styled-components'
 import { LinkContainer } from '@/styles/sharedstyles'
@@ -8,7 +8,6 @@ import { Product } from '@/types/product'
 
 const ShopMoreContainer = styled(LinkContainer)`
     max-width: 175px;
-    margin: 0 auto;
 `;
 
 export default function Home() {
@@ -38,9 +37,12 @@ export default function Home() {
             <HeroSection />
             <ShoeCollection title='Latest Drops' products={latestProducts} />
             <Divider />
-            <ShopMoreContainer isTransparent >
-                <PageLink href='/shop' isSecondary >Shop More</PageLink>
-            </ShopMoreContainer>
+            <div style={{display: 'flex', justifyContent: 'center'}}>
+                <PageLink href='/shop' isSecondary >
+                    <ShopMoreContainer isTransparent >Shop More</ShopMoreContainer>
+                </PageLink>
+            </div>
+            
         </>
     )
 }

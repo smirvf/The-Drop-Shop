@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { NavBarInterface } from "./navbar.types";
 import { PageLink } from "../componentsindex";
-import { FaBars, FaTimes, FaShoppingCart } from "react-icons/fa";
+import { FaBars, FaTimes, FaShoppingCart, FaUser } from "react-icons/fa";
 
 const StyledNavBar = styled.div`
     position: relative;     
@@ -102,6 +102,9 @@ export const NavBar: React.FC<NavBarInterface> = (props) => {
         <Item>
           <PageLink href="/cart"><FaShoppingCart /></PageLink>
         </Item>
+        <Item>
+          <PageLink href="/"><FaUser /></PageLink>
+        </Item>
       </List>
 
       <MobileMenuIcon onClick={toggleMobileMenu} />
@@ -112,7 +115,8 @@ export const NavBar: React.FC<NavBarInterface> = (props) => {
           <PageLink href="/">Home</PageLink>
           <PageLink href="/shop">Shop</PageLink>
           <PageLink href="/about">About</PageLink>
-          <PageLink href="/cart">Cart</PageLink>
+          <PageLink href="/cart"><FaShoppingCart /></PageLink>
+          <PageLink href="/"><FaUser /></PageLink>
         </MobileMenuDropdown>
       )}
     </StyledNavBar>

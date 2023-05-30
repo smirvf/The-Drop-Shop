@@ -24,9 +24,9 @@ export const HeroSection = () => {
         <>
             <StyledHeroSection>
                 <NavBar isTransparent />
-                <ShopNowContainer>
-                    <PageLink href='/shop' isSecondary >Shop Now</PageLink>
-                </ShopNowContainer>
+                <PageLink href='/shop' isSecondary >
+                    <ShopNowContainer>Shop Now</ShopNowContainer>
+                </PageLink>
             </StyledHeroSection>
         </>
     );
