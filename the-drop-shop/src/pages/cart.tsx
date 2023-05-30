@@ -10,6 +10,7 @@ import Head from "next/head";
 
 const StyledCart = styled.div`
   text-align: center;
+  height: 100vh;
 `;
 
 const Table = styled.table`

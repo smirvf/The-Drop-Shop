@@ -7,6 +7,7 @@ const StyledFooter = styled.footer`
     margin-top: 70px;
     background-color: #1F1F1F;
     position: relative;
+    bottom: 0;
     text-align: center;
     font-size: 32px;
     color: #FFF;
