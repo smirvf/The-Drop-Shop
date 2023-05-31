@@ -1,33 +1,38 @@
 import styled from 'styled-components';
 import { NavBar, PageLink } from '../componentsindex';
-import { LinkContainer } from '@/styles/sharedstyles';
+import { CallToAction } from '../calltoaction/calltoaction';
 
 const StyledHeroSection = styled.section`
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    align-items: start;
+    justify-items: center;
+
     width: 100vw;
     height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/hero_image.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: fill;
     position: relative;
-`;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/hero_image.png");
+    background-size: 200%;
 
-const ShopNowContainer = styled(LinkContainer)`
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    animation: pan-image 60s linear infinite;
+    animation-direction: alternate;
+
+    @keyframes pan-image {
+        from {
+            background-position: 0% 0%;
+        }
+
+        to {
+            background-position: 100% 100%;
+        }
+    }
 `;
 
 export const HeroSection = () => {
     return (
-        <>
-            <StyledHeroSection>
-                <NavBar isTransparent />
-                <PageLink href='/shop' isSecondary >
-                    <ShopNowContainer>Shop Now</ShopNowContainer>
-                </PageLink>
-            </StyledHeroSection>
-        </>
+        <StyledHeroSection>
+            <NavBar isTransparent highlightedLink='Home' />
+            <CallToAction href='/shop'>Shop Now</CallToAction>
+        </StyledHeroSection>
     );
 }

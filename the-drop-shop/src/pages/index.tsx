@@ -2,13 +2,9 @@ import Head from 'next/head'
 import { Divider, HeroSection, PageLink, ShoeCollection } from '@/components/componentsindex'
 import shoes from '../shoecollection.json'
 import styled from 'styled-components'
-import { LinkContainer } from '@/styles/sharedstyles'
 import { useEffect, useState } from 'react'
 import { Product } from '@/types/product'
-
-const ShopMoreContainer = styled(LinkContainer)`
-    max-width: 175px;
-`;
+import { CallToAction } from '@/components/calltoaction/calltoaction'
 
 export default function Home() {
 
@@ -38,9 +34,7 @@ export default function Home() {
             <ShoeCollection title='Latest Drops' products={latestProducts} />
             <Divider />
             <div style={{display: 'flex', justifyContent: 'center'}}>
-                <PageLink href='/shop' isSecondary >
-                    <ShopMoreContainer isTransparent >Shop More</ShopMoreContainer>
-                </PageLink>
+                <CallToAction href='/shop' isTransparent>Shop More</CallToAction>
             </div>
             
         </>

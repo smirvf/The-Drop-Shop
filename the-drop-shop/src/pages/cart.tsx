@@ -78,7 +78,7 @@ export default function Cart() {
         <title>Cart</title>
         <link rel="icon" href="/favicon.webp" />
       </Head>
-      <NavBar />
+      <NavBar highlightedLink="Cart" />
       <h2>Cart</h2>
       <Divider />
       {items.length > 0 ? (

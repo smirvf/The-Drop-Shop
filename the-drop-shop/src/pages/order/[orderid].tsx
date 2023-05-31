@@ -1,5 +1,5 @@
+import { CallToAction } from "@/components/calltoaction/calltoaction";
 import { Footer, NavBar, PageLink } from "@/components/componentsindex";
-import { LinkContainer } from "@/styles/sharedstyles";
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -7,11 +7,6 @@ import styled from "styled-components";
 
 const StyledConfirmOrder = styled.div`
     text-align: center;
-`;
-
-const ShopNowContainer = styled(LinkContainer)`
-    max-width: 175px;
-    margin: 0 auto;
 `;
 
 export default function ConfirmOrder() {
@@ -24,7 +19,7 @@ export default function ConfirmOrder() {
                 <title>Order</title>
                 <link rel="icon" href="/favicon.webp" />
             </Head>
-            <NavBar />
+            <NavBar highlightedLink="Cart"/>
             <h2>Thank You For your Order!</h2>
             <Image
                 src='/images/confirm_order_image.jpg.webp'
@@ -34,9 +29,7 @@ export default function ConfirmOrder() {
                 style={{objectFit: 'contain'}}
             />
             <p>Your item will be dispatched shortly</p>
-            <ShopNowContainer isTransparent >
-                <PageLink href="/shop" isSecondary >Shop Now</PageLink>
-            </ShopNowContainer>
+            <CallToAction href="/shop" isTransparent>Shop Now</CallToAction>
         </StyledConfirmOrder>
     );
 }

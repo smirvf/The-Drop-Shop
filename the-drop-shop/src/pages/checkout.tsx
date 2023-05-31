@@ -137,7 +137,7 @@ export default function Checkout() {
         <title>Checkout</title>
         <link rel="icon" href="/favicon.webp" />
       </Head>
-      <NavBar />
+      <NavBar highlightedLink="Cart" />
       <h2>Payment</h2>
       <Divider />
       <FlexContainer>

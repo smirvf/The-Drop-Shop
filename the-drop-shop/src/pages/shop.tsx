@@ -26,7 +26,7 @@ export default function Shop() {
                 <title>Shop</title>
                 <link rel="icon" href="/favicon.webp" />
             </Head>
-            <NavBar />
+            <NavBar highlightedLink="Shop"/>
             <ShoeCollection title="Products" products={products} />
         </>
     );

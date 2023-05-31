@@ -1,5 +1,5 @@
+import { CallToAction } from "@/components/calltoaction/calltoaction";
 import { Divider, Footer, NavBar, PageLink } from "@/components/componentsindex";
-import { LinkContainer } from "@/styles/sharedstyles";
 import Head from "next/head";
 import Image from "next/image";
 import styled from "styled-components";
@@ -40,11 +40,6 @@ const TextContainer = styled.div`
   }
 `;
 
-const ShopNowContainer = styled(LinkContainer)`
-  max-width: 175px;
-  margin: 0 auto;
-`;
-
 const StyledImage = styled(Image)`
   object-fit: contain;
   transform: rotate(45deg);
@@ -64,7 +59,7 @@ export default function About() {
         <link rel="icon" href="/favicon.webp" />
       </Head>
       <div style={{ zIndex: 1, position: "relative" }}>
-        <NavBar />
+        <NavBar highlightedLink="About" />
       </div>
       <FlexContainer>
         <AboutContainer>
@@ -87,11 +82,7 @@ export default function About() {
             heat as soon as it gets released and we are constantly replenishing
             stock on older drops for those who missed out.
           </p>
-          <ShopNowContainer isTransparent>
-            <PageLink href="/shop" isSecondary>
-              Shop Now
-            </PageLink>
-          </ShopNowContainer>
+          <CallToAction href="/shop" isTransparent>Shop Now</CallToAction>
         </TextContainer>
       </FlexContainer>
     </>

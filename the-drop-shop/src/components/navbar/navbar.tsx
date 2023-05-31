@@ -4,7 +4,7 @@ import { NavBarInterface } from "./navbar.types";
 import { PageLink } from "../componentsindex";
 import { FaBars, FaTimes, FaShoppingCart, FaUser } from "react-icons/fa";
 
-const StyledNavBar = styled.div`
+const StyledNavBar = styled.div<{isTransparent?: boolean}>`
     position: relative;     
     z-index: 1; 
     display: flex;
@@ -12,8 +12,7 @@ const StyledNavBar = styled.div`
     justify-content: space-between;
     align-items: center;
     height: 110px;
-    background-color: ${(props: NavBarInterface) =>
-        props.isTransparent ? "rgba(31, 31, 31, 0)" : "rgba(31, 31, 31, 1)"};
+    background-color: ${({isTransparent}) => isTransparent ? "rgba(31, 31, 31, 0)" : "rgba(31, 31, 31, 1)"};
     color: #fff;
     width: 100vw;
 `;
@@ -76,7 +75,7 @@ const CloseIcon = styled(FaTimes)`
     right: 15px;
 `;
 
-export const NavBar: React.FC<NavBarInterface> = (props) => {
+export const NavBar: React.FC<NavBarInterface> = (props: NavBarInterface) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -85,25 +84,25 @@ export const NavBar: React.FC<NavBarInterface> = (props) => {
 
   return (
     <StyledNavBar isTransparent={props.isTransparent}>
-      <PageLink href="/" isLarge>
+      <PageLink href="/" isLarge isHighlighted={false} >
         The Drop Shop
       </PageLink>
 
       <List>
         <Item>
-          <PageLink href="/">Home</PageLink>
+          <PageLink isHighlighted={props.highlightedLink === "Home"} href="/">Home</PageLink>
         </Item>
         <Item>
-          <PageLink href="/shop">Shop</PageLink>
+          <PageLink isHighlighted={props.highlightedLink === "Shop"} href="/shop">Shop</PageLink>
         </Item>
         <Item>
-          <PageLink href="/about">About</PageLink>
+          <PageLink isHighlighted={props.highlightedLink === "About"} href="/about">About</PageLink>
         </Item>
         <Item>
-          <PageLink href="/cart"><FaShoppingCart /></PageLink>
+          <PageLink isHighlighted={props.highlightedLink === "Cart"} href="/cart"><FaShoppingCart /></PageLink>
         </Item>
         <Item>
-          <PageLink href="/"><FaUser /></PageLink>
+          <PageLink isHighlighted={props.highlightedLink === "Profile"} href="/"><FaUser /></PageLink>
         </Item>
       </List>
 
@@ -112,11 +111,11 @@ export const NavBar: React.FC<NavBarInterface> = (props) => {
       {isMobileMenuOpen && (
         <MobileMenuDropdown isOpen={isMobileMenuOpen}>
           <CloseIcon onClick={toggleMobileMenu} />
-          <PageLink href="/">Home</PageLink>
-          <PageLink href="/shop">Shop</PageLink>
-          <PageLink href="/about">About</PageLink>
-          <PageLink href="/cart"><FaShoppingCart /></PageLink>
-          <PageLink href="/"><FaUser /></PageLink>
+          <PageLink isHighlighted={props.highlightedLink === "Home"} href="/">Home</PageLink>
+          <PageLink isHighlighted={props.highlightedLink === "Shop"} href="/shop">Shop</PageLink>
+          <PageLink isHighlighted={props.highlightedLink === "About"} href="/about">About</PageLink>
+          <PageLink isHighlighted={props.highlightedLink === "Cart"} href="/cart"><FaShoppingCart /></PageLink>
+          <PageLink isHighlighted={props.highlightedLink === "Profile"} href="/"><FaUser /></PageLink>
         </MobileMenuDropdown>
       )}
     </StyledNavBar>

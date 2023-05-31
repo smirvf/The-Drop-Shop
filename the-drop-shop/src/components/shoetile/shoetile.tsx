@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 
 const StyledShoeTile = styled.div`
     padding: 8px;
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 
     &:hover {
         cursor: pointer;
