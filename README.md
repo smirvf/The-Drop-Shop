@@ -1,4 +1,4 @@
-# The-Drop-Shop
+# The Drop Shop
 Project initially created for university assignment, now expanding and developing the project to add new features.
 
 ## Front-End
