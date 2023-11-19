@@ -18,7 +18,7 @@ const FlexContainer = styled.div`
 `;
 
 const AboutContainer = styled.div`
-  flex: 0.75;
+  flex: 1;
 
   @media (min-width: 768px) {
     display: flex;
@@ -64,7 +64,7 @@ export default function About() {
       <FlexContainer>
         <AboutContainer>
           <StyledImage
-            src="/images/about_page_image.jpg"
+            src="/images/family_watching_movie.webp"
             alt="Collection of shoes"
             width={426}
             height={756}
@@ -74,13 +74,12 @@ export default function About() {
           <h2>Who We Are</h2>
           <Divider />
           <p>
-            Here at The Drop Shop we intend on creating a wonderful experience
-            for people with a love of trainers. Our mission is to create a
-            community for anybody with a passion for staying up to date with the
-            latest trends as well as those who like to throw it back every once
-            in a while. You will see that our stock regularly refreshes with new
-            heat as soon as it gets released and we are constantly replenishing
-            stock on older drops for those who missed out.
+          Welcome to Netbuster — your digital doorway to a world of cinematic wonders. 
+          As connoisseurs of film, we offer an eclectic DVD selection that spans the latest blockbusters to cherished classics. 
+          At Netbuster, we're not just about movies; we're about the thrill of discovering your next favorite story. 
+          Indulge in our handpicked collection, find rare editions and enjoy the convenience of having the magic of cinema delivered straight to your door. 
+          Start your next movie adventure with Netbuster and transform your DVD collection into a personal hall of film fame. 
+          Shop now and join the movie magic!
           </p>
           <CallToAction href="/shop" isTransparent>Shop Now</CallToAction>
         </TextContainer>

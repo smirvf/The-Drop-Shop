@@ -11,7 +11,7 @@ const StyledHeroSection = styled.section`
     width: 100vw;
     height: 100vh;
     position: relative;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/hero_image.png");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/movie_catalogue.jpeg");
     background-size: 200%;
 
     animation: pan-image 60s linear infinite;

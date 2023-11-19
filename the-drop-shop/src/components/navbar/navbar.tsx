@@ -13,7 +13,7 @@ const StyledNavBar = styled.div<{isTransparent?: boolean}>`
     align-items: center;
     height: 110px;
     background-color: ${({isTransparent}) => isTransparent ? "rgba(31, 31, 31, 0)" : "rgba(31, 31, 31, 1)"};
-    color: #fff;
+    color: #003399;
     width: 100vw;
 `;
 
@@ -22,7 +22,7 @@ const List = styled.ul`
     list-style-type: none;
     margin: 0;
     padding: 0;
-    color: #fff;
+    color: #003399;
     font-size: 22px;
 
     @media (max-width: 768px) {
@@ -40,7 +40,7 @@ const Item = styled.li`
 
 const MobileMenuIcon = styled(FaBars)`
     font-size: 24px;
-    color: #fff;
+    color: #003399;
     cursor: pointer;
 
     @media (min-width: 769px) {
@@ -50,7 +50,7 @@ const MobileMenuIcon = styled(FaBars)`
 
 const MobileMenuDropdown = styled.div<{ isOpen: boolean }>`
     display: ${({ isOpen }) => (isOpen ? "block" : "none")};
-    background-color: #1f1f1f;
+    background-color: #003399;
     position: absolute;
     top: 100%;
     left: 0;
@@ -59,7 +59,7 @@ const MobileMenuDropdown = styled.div<{ isOpen: boolean }>`
 
     a {
         display: block;
-        color: #fff;
+        color: #003399;
         font-size: 18px;
         margin-bottom: 5px;
         text-decoration: none;
@@ -68,7 +68,7 @@ const MobileMenuDropdown = styled.div<{ isOpen: boolean }>`
 
 const CloseIcon = styled(FaTimes)`
     font-size: 24px;
-    color: #fff;
+    color: #003399;
     cursor: pointer;
     position: absolute;
     top: 15px;
@@ -85,7 +85,7 @@ export const NavBar: React.FC<NavBarInterface> = (props: NavBarInterface) => {
   return (
     <StyledNavBar isTransparent={props.isTransparent}>
       <PageLink href="/" isLarge isHighlighted={false} >
-        The Drop Shop
+        Netbuster
       </PageLink>
 
       <List>
