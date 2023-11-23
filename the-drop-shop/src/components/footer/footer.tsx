@@ -15,6 +15,6 @@ const StyledFooter = styled.footer`
 
 export const Footer = () => {
     return (
-        <StyledFooter>Pixel Wave</StyledFooter>
+        <StyledFooter>Netbuster</StyledFooter>
     );
 }

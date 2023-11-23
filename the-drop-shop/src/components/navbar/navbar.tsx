@@ -102,7 +102,7 @@ export const NavBar: React.FC<NavBarInterface> = (props: NavBarInterface) => {
           <PageLink isHighlighted={props.highlightedLink === "Cart"} href="/cart"><FaShoppingCart /></PageLink>
         </Item>
         <Item>
-          <PageLink isHighlighted={props.highlightedLink === "Profile"} href="/"><FaUser /></PageLink>
+          <PageLink isHighlighted={props.highlightedLink === "Profile"} href="/login"><FaUser /></PageLink>
         </Item>
       </List>
 
