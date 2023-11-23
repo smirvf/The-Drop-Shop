@@ -42,7 +42,7 @@ const TextContainer = styled.div`
 
 const StyledImage = styled(Image)`
   object-fit: contain;
-  transform: rotate(45deg);
+  padding-left: 20px;
   width: 100%;
   height: 100%;
 
