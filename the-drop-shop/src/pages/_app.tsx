@@ -3,6 +3,8 @@ import { createGlobalStyle } from 'styled-components';
 import { Montserrat } from 'next/font/google';
 import { CartProvider } from '@/context/cartcontext';
 import { Footer } from '@/components/componentsindex';
+import { createContext, useState } from 'react';
+import { User } from '@/types/user';
 
 const montserrat = Montserrat({subsets : ['latin']});
 
@@ -57,12 +59,23 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
+export const UserContext = createContext({});
+
 export default function App({ Component, pageProps }: AppProps) {
+  const [currentUser, setCurrentUser] = useState<User>({} as User);
+
   return (
     <CartProvider>
-      <GlobalStyle />
-      <Component {...pageProps} />
-      <Footer />
+      <UserContext.Provider
+        value={{
+          currentUser,
+          setCurrentUser
+        }}
+      >
+        <GlobalStyle />
+        <Component {...pageProps} />
+        <Footer />
+      </UserContext.Provider>
     </CartProvider>
   ); 
 }
