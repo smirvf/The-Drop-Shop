@@ -7,6 +7,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @CrossOrigin
 @RequiredArgsConstructor
@@ -25,5 +27,10 @@ public class UserController {
     public ResponseEntity<User> login(@RequestParam String email, @RequestParam String password) {
         var user = userService.login(email, password);
         return ResponseEntity.ok(user);
+    }
+
+    @GetMapping("users")
+    public ResponseEntity<List<User>> fetchUsers() {
+        return ResponseEntity.ok(userService.fetchUsers());
     }
 }
