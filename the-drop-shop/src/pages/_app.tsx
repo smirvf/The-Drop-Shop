@@ -5,6 +5,7 @@ import { CartProvider } from '@/context/cartcontext';
 import { Footer } from '@/components/componentsindex';
 import { createContext, useState } from 'react';
 import { User } from '@/types/user';
+import { UserContextStruct } from '@/types/usercontextstruct';
 
 const montserrat = Montserrat({subsets : ['latin']});
 
@@ -59,7 +60,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-export const UserContext = createContext({});
+export const UserContext = createContext<UserContextStruct>({currentUser: null, setCurrentUser: null});
 
 export default function App({ Component, pageProps }: AppProps) {
   const [currentUser, setCurrentUser] = useState<User>({} as User);

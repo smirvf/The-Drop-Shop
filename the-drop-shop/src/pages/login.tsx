@@ -3,6 +3,7 @@ import Image from "next/image";
 import styled from "styled-components";
 import { Divider, Footer, NavBar, PageLink } from "@/components/componentsindex";
 import { useContext, useState } from "react";
+import Link from "next/link";
 
 
 const Section = styled.fieldset`
@@ -62,7 +63,7 @@ const [password, setPassword] = useState("");
           </Section>
           <Button type="submit">Login</Button>
           <Account>
-            Don't have an account? <a href="/signup">Sign Up</a>
+            Don't have an account? <Link href="/signup">Sign Up</Link>
           </Account>
       </div>
 

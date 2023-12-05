@@ -3,6 +3,8 @@ import Image from "next/image";
 import styled from "styled-components";
 import { Divider, Footer, NavBar, PageLink } from "@/components/componentsindex";
 import { useContext, useState } from "react";
+import { UserContext } from "./_app";
+import { User } from "@/types/user";
 
 const Section = styled.fieldset`
   background-color: #D9D9D9;
@@ -41,9 +43,31 @@ const Account = styled.p`
 `
 
 export default function SignUp() {
+  const {currentUser, setCurrentUser} = useContext(UserContext);
 const [email, setEmail] = useState("");
 const [username, setUsername] = useState("");
 const [password, setPassword] = useState("");
+
+const signup = async () => {
+  const userFetch = await fetch("http://localhost:8080/api/v1/users/signup", {
+    method: "POST",
+    body: JSON.stringify({
+      email: email,
+      username: username,
+      password: password
+    }),
+    headers: {
+      "Content-type": "application/json"
+    }
+  })
+
+  var user = await userFetch.json() as User
+
+  if (user && setCurrentUser) {
+    setCurrentUser(user)
+  }
+}
+
     return (
         <>
         <Head>
@@ -52,6 +76,7 @@ const [password, setPassword] = useState("");
         <div style={{ zIndex: 1, position: "relative" }}>
         <NavBar highlightedLink="Profile" />
         <div/>
+        <form onSubmit={signup}>
         <Section>
         <h2>Sign Up</h2>
             <br />
@@ -63,6 +88,7 @@ const [password, setPassword] = useState("");
             <Input type="text" id="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} /><br/>
           </Section>
           <Button type="submit">Sign Up</Button>
+        </form>
           <Account>
             Already have an account? <a href="/login">Login</a>
           </Account>
